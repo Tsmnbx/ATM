@@ -1,0 +1,21 @@
+import yahoofinance.YahooFinance;
+import yahoofinance.Stock;
+
+import java.io.IOException;
+import java.math.BigDecimal;
+
+class Scratch {
+    public static void main(String[] args) {
+        try{Stock stock = YahooFinance.get("AAPL");
+            BigDecimal price = stock.getQuote(true).getPrice();;
+
+       // BigDecimal price = stock.getQuote().getPrice();
+        //BigDecimal change = stock.getQuote().getChangeInPercent();
+        //BigDecimal peg = stock.getStats().getPeg();
+        //BigDecimal dividend = stock.getDividend().getAnnualYieldPercent();
+        System.out.println(price);
+        }
+
+        catch (IOException e){}
+    }
+}
